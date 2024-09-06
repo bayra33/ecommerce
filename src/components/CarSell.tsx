@@ -11,10 +11,11 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Image from "next/image";
 
 export const CarSell = () => {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: false, loop: true }) // Ensures continuous looping
+    Autoplay({ delay: 2000, stopOnInteraction: false }) // Ensures continuous looping
   );
 
   return (
@@ -22,28 +23,43 @@ export const CarSell = () => {
       <div className="flex justify-center">
         <Carousel
           plugins={[plugin.current]}
-          className="w-full max-w-xs"
+          className="fit-content" // Set the carousel container to 1040px x 446px
         >
           <CarouselContent>
             {Array.from({ length: 5 }).map((_, index) => (
               <CarouselItem key={index}>
                 <div className="p-1">
                   <Card>
-                    <CardContent className="flex aspect-square items-center justify-center p-6">
+                    <CardContent className="flex items-center justify-center p-6">
                       {index === 0 ? (
-                        <img
-                          src="https://i.ebayimg.com/images/g/mrQAAOSww5Rj9PFp/s-l1600.webp"
-                          alt="Car"
-                          className="object-cover w-full h-full"
-                        />
+                        <div className="relative w-[1040px] h-[446px]"> {/* Set the image container to 1040px x 446px */}
+                          <Image
+                            src="/hoode.jpg"
+                            alt="Hoodie"
+                            layout="fill"
+                            objectFit="cover"
+                          />
+                        </div>
                       ) : index === 1 ? (
-                        <img
-                          src="https://www.foodiesfeed.com/wp-content/uploads/2023/06/burger-with-melted-cheese.jpg"
+                        <div className="relative w-[1040px] h-[446px]"> {/* Set the image container to 1040px x 446px */}
+                          <Image 
+                          className="rounded-lg"
+                            src="/hoode.jpg"
+                            alt="Burger"
+                            layout="fill"
+                            objectFit="cover"
+                          />
+                        </div>
+                      ) :  (
+                        <div className="relative w-[1040px] h-[446px]"> {/* Set the image container to 1040px x 446px */}
+                        <Image 
+                        className="rounded-lg"
+                          src="/hoode.jpg"
                           alt="Burger"
-                          className="object-cover w-full h-full"
+                          layout="fill"
+                          objectFit="cover"
                         />
-                      ) : (
-                        <span className="text-4xl font-semibold">{index + 1}</span>
+                      </div>
                       )}
                     </CardContent>
                   </Card>
