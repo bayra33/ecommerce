@@ -8,13 +8,13 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-2 w-full h-full items-center">
       
-      <div className="w-[1040px]">
+      <div className="w-[1040px] my-5 mt-5">
 
      
    <CarSell/>
     <Body/>
     </div>
-   <Footer/>
+ 
     </div>
   );
 }

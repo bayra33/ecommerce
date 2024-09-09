@@ -15,7 +15,7 @@ import Image from "next/image";
 
 export const CarSell = () => {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: false }) // Ensures continuous looping
+    Autoplay({ delay: 3000, stopOnInteraction: false }) // Ensures continuous looping
   );
 
   return (
