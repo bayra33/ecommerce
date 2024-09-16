@@ -1,29 +1,28 @@
 "use client";
 
 import { Checkbox } from "@/components/ui/checkbox";
-import Link from "next/link"; // Import Link from next/link
+import Link from "next/link";
 
 export const Goods = () => {
   const categories: string[] = ["Малгай", "сны сав", "T-shirt", "Hoodie", "Tee", "Цүнх"];
-  const sizes: string[] = ["XS", "S", "M", "L", "XL"]; // Add appropriate sizes
+  const sizes: string[] = ["XS", "S", "M", "L", "XL"];
   
   interface Product {
     name: string;
     price: string;
     image: string;
-    link: string; // Add link property to the Product interface
+    link: string;
   }
 
   const products: Product[] = [
-    { name: "Малгай", price: "120'000₮", image: "promt.png", link: "/product1" },
-    { name: "сны сав", price: "120'000₮", image: "promt.png", link: "/product2" },
-    { name: "T-shirt", price: "120'000₮", image: "promt.png", link: "/product3" },
-    { name: "Hoodie", price: "120'000₮", image: "promt.png", link: "/product4" },
-    { name: "Tee", price: "120'000₮", image: "promt.png", link: "/product5" },
-    { name: "Цүнх", price: "120'000₮", image: "promt.png", link: "/product6" },
+    { name: "Малгай", price: "120'000₮", image: "/promt.png", link: "/product/1" },
+    { name: "сны сав", price: "120'000₮", image: "/image2.png", link: "/product/2" },
+    { name: "T-shirt", price: "120'000₮", image: "/promt.png", link: "/product/3" },
+    { name: "Hoodie", price: "120'000₮", image: "/promt.png", link: "/product/4" },
+    { name: "Tee", price: "120'000₮", image: "/image2.png", link: "/product/5" },
+    { name: "Цүнх", price: "120'000₮", image: "/promt.png", link: "/product/6" },
   ];
 
-  // Component to display product cards
   const ProductCard = ({ name, price, image, link }: Product) => (
     <div className="flex flex-col">
       <Link href={link}>
@@ -41,42 +40,29 @@ export const Goods = () => {
   return (
     <div className="w-full flex justify-center">
       <div className="w-[1039px] flex justify-between">
-        {/* Left Sidebar */}
+        {/* Sidebar */}
         <div>
-          {/* Categories */}
-          <div>
-            <p className="font-semibold mt-12">Ангилал</p>
-            <div className="flex flex-col gap-2 mt-4">
-              {categories.map((category, index) => (
-                <div key={index} className="flex items-center space-x-2">
-                  <Checkbox id={`category-${index}`} />
-                  <label
-                    htmlFor={`category-${index}`}
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    {category}
-                  </label>
-                </div>
-              ))}
-            </div>
+          <p className="font-semibold mt-12">Ангилал</p>
+          <div className="flex flex-col gap-2 mt-4">
+            {categories.map((category, index) => (
+              <div key={index} className="flex items-center space-x-2">
+                <Checkbox id={`category-${index}`} />
+                <label htmlFor={`category-${index}`} className="text-sm font-medium leading-none">
+                  {category}
+                </label>
+              </div>
+            ))}
           </div>
-
-          {/* Sizes */}
-          <div>
-            <p className="font-semibold mt-12">Хэмжээ</p>
-            <div className="flex flex-col gap-2 mt-4">
-              {sizes.map((size, index) => (
-                <div key={index} className="flex items-center space-x-2">
-                  <Checkbox id={`size-${index}`} />
-                  <label
-                    htmlFor={`size-${index}`}
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    {size}
-                  </label>
-                </div>
-              ))}
-            </div>
+          <p className="font-semibold mt-12">Хэмжээ</p>
+          <div className="flex flex-col gap-2 mt-4">
+            {sizes.map((size, index) => (
+              <div key={index} className="flex items-center space-x-2">
+                <Checkbox id={`size-${index}`} />
+                <label htmlFor={`size-${index}`} className="text-sm font-medium leading-none">
+                  {size}
+                </label>
+              </div>
+            ))}
           </div>
         </div>
 
