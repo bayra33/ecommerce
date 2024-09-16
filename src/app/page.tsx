@@ -1,6 +1,7 @@
 
 import { CarSell } from "@/components/CarSell";
 import { Body } from "@/components/Body";
+import { Card } from "@/components/card";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
      
    <CarSell/>
     <Body/>
+    <Card/>
     </div>
  
     </div>

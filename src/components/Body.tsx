@@ -15,7 +15,7 @@ export const Body: React.FC = () => {
     <div className="flex flex-col gap-2">
       <div className="grid grid-cols-4 gap-4 w-full overflow-hidden">
         <div className=''>
-            <div className='position-absolute'>
+            <div className='position-relative'>
         <img 
           className="rounded-lg w-[244px] h-[331px] object-cover transform transition-transform duration-300 hover:scale-105 cursor-pointer"
           src="promt.png"
@@ -23,7 +23,7 @@ export const Body: React.FC = () => {
           onClick={handleClick} // Redirect to the product page on click
         />
         </div>
-        <div className="position-relative">
+        <div className="position-absolute">
         <FaHeart/>
         </div>
         </div>
@@ -62,13 +62,13 @@ export const Body: React.FC = () => {
         />
         <img
           className="rounded-lg object-cover transform transition-transform duration-300 hover:scale-105 col-span-2 row-span-2 cursor-pointer"
-          src="promt.png"
+          src="progress.png"
           alt="Product 7"
           onClick={() => router.push('/product/7')}
         />
         <img
           className="rounded-lg object-cover transform transition-transform duration-300 hover:scale-105 col-span-2 row-span-2 cursor-pointer"
-          src="promt.png"
+          src="purple.png"
           alt="Product 8"
           onClick={() => router.push('/product/8')}
         />
